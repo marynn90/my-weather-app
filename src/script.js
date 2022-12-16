@@ -1,4 +1,5 @@
-function showCity() {
+function handleClick(event) {
+  event.preventDefault();
   let cityInput = document.querySelector("input");
   let nameCity = document.querySelector("#city");
   let newName = cityInput.value;
@@ -23,7 +24,7 @@ function showCity() {
   axios.get(apiUrl).then(showTemp);
 }
 let searchBtn = document.querySelector("#searchButton");
-searchBtn.addEventListener("click", showCity);
+searchBtn.addEventListener("click", handleClick);
 
 let date = document.querySelector("#currentDate");
 let now = new Date();
@@ -39,7 +40,8 @@ let days = [
 let day = days[now.getDay()];
 date.innerHTML = `${day} ${now.getHours()}:${now.getMinutes()}`;
 
-function showCurrent() {
+function showCurrent(event) {
+  event.preventDefault();
   function showPosition(position) {
     let latitude = position.coords.latitude;
     console.log(latitude);

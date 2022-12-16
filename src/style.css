@@ -107,3 +107,8 @@ h1 {
   background-color: rgb(229, 245, 250);
   color: rgb(101, 119, 125);
 }
+.small {
+  position: relative;
+  bottom: -650px;
+  right: -600px;
+}

@@ -16,123 +16,127 @@
     <title>Weather App</title>
   </head>
   <body>
-    <div class="container">
-      <form>
-        <div class="row">
-          <div class="col-6">
-            <input
-              class="input-city"
-              type="text"
-              placeholder="Enter a city ..."
-            />
-          </div>
-          <div class="col-3">
-            <button class="btn" id="searchButton">Search</button>
-          </div>
-          <div class="col-3">
-            <button class="btn-current" id="currentButton">Current</button>
-          </div>
-        </div>
-      </form>
-      <div class="grid-container">
-        <div>
-          <div class="grid-container2">
-            <div>
-              <img
-                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/cloud-with-rain_1f327-fe0f.png"
-                alt="rainycloud"
+    <div class="app-wrapper">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="col-6">
+              <input
+                class="input-city"
+                type="text"
+                placeholder="Type a city name..."
               />
             </div>
-            <div>
-              <h1 id="city">Tehran</h1>
-              <p class="description" id="currentDate"></p>
+            <div class="col-3">
+              <button type="submit" class="btn" id="searchButton">
+                Search
+              </button>
+            </div>
+            <div class="col-3">
+              <button class="btn-current" id="currentButton">Current</button>
+            </div>
+          </div>
+        </form>
+        <div class="grid-container">
+          <div>
+            <div class="grid-container2">
+              <div>
+                <img
+                  id="icon"
+                  src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/cloud-with-rain_1f327-fe0f.png"
+                  alt="rainycloud"
+                />
+              </div>
+              <div>
+                <h1 id="city">Paris</h1>
+                <p class="description" id="currentDate"></p>
 
-              <p class="description" id="description">Light rain showers</p>
+                <p class="description" id="description"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="degree-number" id="degree-number">2</div>
+          <div>
+            <p class="degree">°C</p>
+
+            <p class="description" id="humidity">Humidity: 88%</p>
+
+            <p class="description" id="wind">Wind: 8 km/h</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="row days">
+            <div class="col">
+              Tue
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/cloud_2601-fe0f.png"
+                alt="cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong>7°</strong> 3°</div>
+            </div>
+            <div class="col">
+              Wed
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+                alt="Sun Behind Large Cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+            </div>
+            <div class="col">
+              Thu
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+                alt="Sun Behind Large Cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+            </div>
+            <div class="col">
+              Fri
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+                alt="Sun Behind Large Cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+            </div>
+            <div class="col">
+              Sat
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+                alt="Sun Behind Large Cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong> 9°</strong> 1°</div>
+            </div>
+            <div class="col">
+              Sun
+              <br />
+              <img
+                class="days-emojis"
+                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+                alt="Sun Behind Large Cloud"
+              />
+              <br />
+              <div class="daily-degrees"><strong> 9°</strong> 0°</div>
             </div>
           </div>
         </div>
-
-        <div class="degree-number" id="degree-number">2</div>
-        <div>
-          <p class="degree">°C</p>
-
-          <p class="description" id="humidity">Humidity: 88%</p>
-
-          <p class="description" id="wind">Wind: 8 km/h</p>
-        </div>
       </div>
-      <div class="text-center">
-        <div class="row days">
-          <div class="col">
-            Tue
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/cloud_2601-fe0f.png"
-              alt="cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong>7°</strong> 3°</div>
-          </div>
-          <div class="col">
-            Wed
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
-              alt="Sun Behind Large Cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong> 9°</strong> 2°</div>
-          </div>
-          <div class="col">
-            Thu
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
-              alt="Sun Behind Large Cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong> 9°</strong> 2°</div>
-          </div>
-          <div class="col">
-            Fri
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
-              alt="Sun Behind Large Cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong> 9°</strong> 2°</div>
-          </div>
-          <div class="col">
-            Sat
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
-              alt="Sun Behind Large Cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong> 9°</strong> 1°</div>
-          </div>
-          <div class="col">
-            Sun
-            <br />
-            <img
-              class="days-emojis"
-              src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
-              alt="Sun Behind Large Cloud"
-            />
-            <br />
-            <div class="daily-degrees"><strong> 9°</strong> 0°</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="small">
+
       <small>
         <a href="https://github.com/marynn90/my-weather-app">source code</a> by
         Maryam Norouznezhad

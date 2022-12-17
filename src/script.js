@@ -1,11 +1,11 @@
 function showTemp(response) {
   console.log(response);
-  console.log(response.data.name);
   let city = document.querySelector("#city");
   city.innerHTML = response.data.name;
-  let temperature = Math.round(response.data.main.temp);
-  let temperature2 = document.querySelector("#degree-number");
-  temperature2.innerHTML = temperature;
+  celciusTemp = response.data.main.temp;
+  let temperature = Math.round(celciusTemp);
+  let temperatureElement = document.querySelector("#degree-number");
+  temperatureElement.innerHTML = temperature;
   let humid = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
@@ -30,7 +30,7 @@ function handleClick(event) {
   let newName = cityInput.value;
   search(newName);
 }
-search("Paris");
+
 let searchBtn = document.querySelector("#searchButton");
 searchBtn.addEventListener("click", handleClick);
 
@@ -82,5 +82,27 @@ function showCurrent(event) {
   }
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+function showFarenheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#degree-number");
+  let farenheitTemperature = Math.round((celciusTemp * 9) / 5 + 32);
+  celcius.classList.remove("active");
+  farenheit.classList.add("active");
+  tempElement.innerHTML = farenheitTemperature;
+}
+function showCelciusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#degree-number");
+  tempElement.innerHTML = Math.round(celciusTemp);
+  celcius.classList.add("active");
+  farenheit.classList.remove("active");
+}
+let celciusTemp = null;
+let farenheit = document.querySelector("#farenheit-link");
+farenheit.addEventListener("click", showFarenheitTemp);
+let celcius = document.querySelector("#celcius-link");
+celcius.addEventListener("click", showCelciusTemp);
 let currentBtn = document.querySelector("#currentButton");
 currentBtn.addEventListener("click", showCurrent);
+search("New York");

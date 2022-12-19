@@ -99,33 +99,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-function showCurrent(event) {
-  event.preventDefault();
-  function showPosition(position) {
-    let latitude = position.coords.latitude;
-
-    let longitude = position.coords.longitude;
-    let apiKey2 = "ad793a6d772939c31783de5822791acf";
-    let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey2}&units=metric`;
-    function showCurrent(response) {
-      console.log(response);
-      let nameCityy = document.querySelector("#city");
-      nameCityy.innerHTML = response.data.name;
-      let temperaturee = Math.round(response.data.main.temp);
-      let temperature22 = document.querySelector("#degree-number");
-      temperature22.innerHTML = temperaturee;
-      let humidd = document.querySelector("#humidity");
-      let windd = document.querySelector("#wind");
-      let descriptionn = document.querySelector("#description");
-      descriptionn.innerHTML = response.data.weather[0].description;
-      humidd.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-      windd.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
-    }
-    axios.get(apiUrl2).then(showCurrent);
-  }
-  navigator.geolocation.getCurrentPosition(showPosition);
-}
-
 function showFarenheitTemp(event) {
   event.preventDefault();
   let tempElement = document.querySelector("#degree-number");
@@ -146,6 +119,4 @@ let farenheit = document.querySelector("#farenheit-link");
 farenheit.addEventListener("click", showFarenheitTemp);
 let celcius = document.querySelector("#celcius-link");
 celcius.addEventListener("click", showCelciusTemp);
-let currentBtn = document.querySelector("#currentButton");
-currentBtn.addEventListener("click", showCurrent);
 search("New York");

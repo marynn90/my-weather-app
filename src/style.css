@@ -81,25 +81,8 @@ h1 {
   color: white;
   border-radius: 24px;
   transition: all 150ms ease-in-out;
-  position: relative;
-  right: -80px;
-}
-.btn-current {
-  padding: 15px 30px;
-  background-color: rgb(101, 119, 125);
-  color: white;
-  border-radius: 24px;
-  border: none;
-  transition: all 150ms ease-in-out;
-  position: relative;
-  right: -40px;
-  bottom: -2px;
 }
 .btn:hover {
-  background-color: rgb(229, 245, 250);
-  color: rgb(101, 119, 125);
-}
-.btn-current:hover {
   background-color: rgb(229, 245, 250);
   color: rgb(101, 119, 125);
 }

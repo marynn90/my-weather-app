@@ -1,0 +1,68 @@
+<div class="row days">
+  <div class="col">
+    Tue
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/cloud_2601-fe0f.png"
+      alt="cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong>7°</strong> 3°</div>
+  </div>
+  <div class="col">
+    Wed
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+      alt="Sun Behind Large Cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+  </div>
+  <div class="col">
+    Thu
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+      alt="Sun Behind Large Cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+  </div>
+  <div class="col">
+    Fri
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+      alt="Sun Behind Large Cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong> 9°</strong> 2°</div>
+  </div>
+  <div class="col">
+    Sat
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+      alt="Sun Behind Large Cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong> 9°</strong> 1°</div>
+  </div>
+  <div class="col">
+    Sun
+    <br />
+    <img
+      class="days-emojis"
+      src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/325/sun-behind-large-cloud_1f325-fe0f.png"
+      alt="Sun Behind Large Cloud"
+    />
+    <br />
+    <div class="daily-degrees"><strong> 9°</strong> 0°</div>
+  </div>
+</div>

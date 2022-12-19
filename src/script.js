@@ -1,3 +1,8 @@
+function getForecast(coordinates) {
+  let apiKey = "ad793a6d772939c31783de5822791acf";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={part}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function showTemp(response) {
   console.log(response);
   let city = document.querySelector("#city");
@@ -17,6 +22,7 @@ function showTemp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function search(newName) {
@@ -55,12 +61,49 @@ let days = [
 ];
 let day = days[now.getDay()];
 date.innerHTML = `${day} ${hours}:${minutes}`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row days">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+  <div class="col-2">
+    ${formatDay(forecastDay.dt)}
+    <br />
+    <img
+      class="days-emojis"
+      src="https://openweathermap.org/img/wn/${
+        forecastDay.weather[0].icon
+      }@2x.png"
+      alt=""
+    />
+    <br />
+    <div class="daily-degrees"><strong>${Math.round(
+      forecastDay.temp.max
+    )}°</strong> ${Math.round(forecastDay.temp.min)}°</div>
+    </div>
+    `;
+    }
+  });
 
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 function showCurrent(event) {
   event.preventDefault();
   function showPosition(position) {
     let latitude = position.coords.latitude;
-    console.log(latitude);
+
     let longitude = position.coords.longitude;
     let apiKey2 = "ad793a6d772939c31783de5822791acf";
     let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey2}&units=metric`;

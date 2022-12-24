@@ -14,6 +14,8 @@ function showTemp(response) {
   let wind = document.querySelector("#wind");
   let description = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
+  celcius.classList.add("active");
+  farenheit.classList.remove("active");
   description.innerHTML = response.data.weather[0].description;
   humid.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   wind.innerHTML = `Wind: ${response.data.wind.speed} km/h`;
